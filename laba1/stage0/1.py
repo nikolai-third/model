@@ -56,9 +56,6 @@ gmsh.model.geo.synchronize()
 
 gmsh.model.mesh.generate(3)
 
-gmsh.write("t2.msh")
-gmsh.write("t2.geo_unrolled")
-
 gmsh.fltk.run()
 
 gmsh.finalize()
