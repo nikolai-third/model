@@ -5,7 +5,7 @@ gmsh.initialize()
 
 gmsh.model.add("t2")
 
-lc = 1e-2
+lc = 1e-3
 gmsh.model.geo.addPoint(0, 0, 0, lc, 1)
 gmsh.model.geo.addPoint(.1, 0, 0, lc, 2)
 gmsh.model.geo.addPoint(0, .1, 0, lc, 4)
@@ -48,6 +48,10 @@ gmsh.model.geo.addPlaneSurface([5], 5)
 
 gmsh.model.geo.addCurveLoop([1, 4, 7, 10], 6)
 gmsh.model.geo.addPlaneSurface([6], 6)
+
+
+
+
 
 l = gmsh.model.geo.addSurfaceLoop([i + 1 for i in range(6)])
 gmsh.model.geo.addVolume([l])
