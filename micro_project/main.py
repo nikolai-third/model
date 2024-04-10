@@ -7,110 +7,138 @@ gmsh.initialize()
 # Create a new model
 gmsh.model.add('sphere')
 
-lc = 1e-3
-gmsh.model.geo.addPoint(0, 0, 0, lc, 1)
-gmsh.model.geo.addPoint(.1, 0, 0, lc, 2)
-gmsh.model.geo.addPoint(0, .1, 0, lc, 4)
-gmsh.model.geo.addPoint(0, 0, .001, lc, 5)
-gmsh.model.geo.addPoint(.1, .1, 0, lc, 3)
-gmsh.model.geo.addPoint(0, .1, .001, lc, 8)
-gmsh.model.geo.addPoint(.1, 0, .001, lc, 6)
-gmsh.model.geo.addPoint(.1, .1, .001, lc, 7)
-
-u = 1
-for i in range(1, 5):
-    if (i!= 4):
-        gmsh.model.geo.addLine(i, (i+1), u)
-        u += 1
-        gmsh.model.geo.addLine((i+4), (i+5), u)
-        u += 1
-    else:
-        gmsh.model.geo.addLine(i, (i-3), u)
-        u += 1
-        gmsh.model.geo.addLine((i+4), (i+1), u)
-        u += 1
-    gmsh.model.geo.addLine(i, i+4, u)
-    u += 1
-
-
-gmsh.model.geo.addCurveLoop([1, 6, -2, -3], 1)
-gmsh.model.geo.addPlaneSurface([1], 1)
-
-gmsh.model.geo.addCurveLoop([5, -9, -4, 6], 2)
-gmsh.model.geo.addPlaneSurface([2], 2)
-
-gmsh.model.geo.addCurveLoop([9, 8, -12, -7], 3)
-gmsh.model.geo.addPlaneSurface([3], 3)
-
-gmsh.model.geo.addCurveLoop([12, 11, -3, -10], 4)
-gmsh.model.geo.addPlaneSurface([4], 4)
-
-gmsh.model.geo.addCurveLoop([2, 5, 8, 11], 5)
-gmsh.model.geo.addPlaneSurface([5], 5)
-
-gmsh.model.geo.addCurveLoop([1, 4, 7, 10], 6)
-gmsh.model.geo.addPlaneSurface([6], 6)
-
-
-
-
-
-l = gmsh.model.geo.addSurfaceLoop([i + 1 for i in range(6)])
-gmsh.model.geo.addVolume([l])
-
-#gmsh.model.geo.synchronize()
-#gmsh.model.mesh.generate(3)
-
-
-
-# Sphere parameters
+# Parameters for sphere
 radius = 0.007
 num_points = 20
-num_lines = 2 * num_points
+lc = 1e-3
 
-# Create points on the surface of the sphere
+# Create points on the sphere surface
 points = []
 for i in range(num_points):
     theta = (math.pi * i) / (num_points - 1)
-    for j in range(num_points):
-        phi = (2 * math.pi * j) / (num_points - 1)
+    if (i == 0 or i == num_points-1):
+        phi = 0
         x = 0.05 + radius * math.sin(theta) * math.cos(phi)
         y = 0.05 + radius * math.sin(theta) * math.sin(phi)
         z = 0.03 + radius * math.cos(theta)
-        points.append(gmsh.model.geo.addPoint(x, y, z, meshSize=0.1))
+        points.append(gmsh.model.geo.addPoint(x, y, z, lc))
+    else:
+        for j in range(num_points-1):
+            phi = (2 * math.pi * j) / (num_points - 1)
+            x = 0.05 + radius * math.sin(theta) * math.cos(phi)
+            y = 0.05 + radius * math.sin(theta) * math.sin(phi)
+            z = 0.03 + radius * math.cos(theta)
+            points.append(gmsh.model.geo.addPoint(x, y, z, lc))
 
-# Create curves forming squares on the surface of the sphere
-curves = []
-for i in range(num_points - 1):
-    for j in range(num_points - 1):
-        curve_points = [
-            points[i * num_points + j],
-            points[i * num_points + j + 1],
-            points[(i + 1) * num_points + j + 1],
-            points[(i + 1) * num_points + j],
-            points[i * num_points + j]
-        ]
-        curves.append([gmsh.model.geo.addLine(curve_points[k], curve_points[k + 1]) for k in range(4)])
+# Create lines connecting points
+lines = []
+for i in range(num_points-2):
+    for j in range(1, num_points):
+        if j != num_points-1:
+            lines.append(gmsh.model.geo.addLine(points[i * (num_points-1) + j], points[i * (num_points-1) + j + 1]))
+        else:
+            lines.append(gmsh.model.geo.addLine(points[i * (num_points-1) + j], points[i * (num_points-1) + 1]))
+        
+for i in range(num_points-2):
+    if (i == 0):
+        for u in range(2):
+            for k in range(1, num_points):
+                if u == 0:
+                    lines.append(gmsh.model.geo.addLine(points[0], points[k]))
+                else:
+                    lines.append(gmsh.model.geo.addLine(points[k], points[(num_points-1)+k]))
+    else:
+        for j in range(1, num_points):
+            if (i == num_points-3):
+                lines.append(gmsh.model.geo.addLine(points[i * (num_points-1)+j], points[len(points)-1]))
+            else:
+                lines.append(gmsh.model.geo.addLine(points[i * (num_points-1)+j], points[(i+1) * (num_points-1)+j]))
 
-# Create plane surfaces for each CurveLoop
-plane_surfaces = []
-for curve_loop in curves:
-    curve_loop_id = gmsh.model.geo.addCurveLoop(curve_loop)
-    plane_surfaces.append(gmsh.model.geo.addPlaneSurface([curve_loop_id]))
 
-# Create surface loop
-surface_loop = gmsh.model.geo.addSurfaceLoop(plane_surfaces)
+num_of_paralel = (num_points-1)*(num_points-2)
 
-# Create volume
-volume = gmsh.model.geo.addVolume([surface_loop])
+surfaces = []
+for i in range(num_points-1):
+    for j in range(1, num_points):
+        if (i == 0):
+            if (j!=num_points-1):
+                surfaces.append(gmsh.model.geo.addCurveLoop([j, -1*(num_of_paralel+j+1), num_of_paralel+j]))
+            else:
+                surfaces.append(gmsh.model.geo.addCurveLoop([j, -1*(num_of_paralel+1), num_of_paralel+j]))
+        elif(i != num_points-2):
+            if (j!=num_points-1):
+                surfaces.append(gmsh.model.geo.addCurveLoop([i*(num_points-1) + j, -1*(i*(num_points-1) + num_of_paralel+j+1), 
+                                             -1*((i-1)*(num_points-1) + j), i*(num_points-1) + num_of_paralel+j]))
+            else:
+                surfaces.append(gmsh.model.geo.addCurveLoop([i*(num_points-1) + j, -1*(i*(num_points-1) + num_of_paralel+1), 
+                                             -1*((i-1)*(num_points-1) + j), i*(num_points-1) + num_of_paralel+j]))
+        else:
+            if (j!=num_points-1):
+                surfaces.append(gmsh.model.geo.addCurveLoop([(i-1)*(num_points-1) + j, -1*(i*(num_points-1) + num_of_paralel+j), 
+                                             i*(num_points-1) + num_of_paralel+j+1]))
+            else:
+                surfaces.append(gmsh.model.geo.addCurveLoop([(i-1)*(num_points-1) + j, (i-1)*(num_points-1) + num_of_paralel+j+1,
+                                             -1*(i*(num_points-1) + num_of_paralel+j)]))
 
-# Generate mesh
+
+plane_surfaces = [gmsh.model.geo.addPlaneSurface([curve_loop]) for curve_loop in surfaces]
+
+l2 = gmsh.model.geo.addSurfaceLoop(plane_surfaces)
+gmsh.model.geo.addVolume([l2])
+
+
+
+p1 = gmsh.model.geo.addPoint(0, 0, 0, lc)
+p2 = gmsh.model.geo.addPoint(.1, 0, 0, lc)
+p4 = gmsh.model.geo.addPoint(0, .1, 0, lc)
+p5 = gmsh.model.geo.addPoint(0, 0, .001, lc)
+p3 = gmsh.model.geo.addPoint(.1, .1, 0, lc)
+p8 = gmsh.model.geo.addPoint(0, .1, .001, lc)
+p6 = gmsh.model.geo.addPoint(.1, 0, .001, lc)
+p7 = gmsh.model.geo.addPoint(.1, .1, .001, lc)
+
+l1 = gmsh.model.geo.addLine(p1, p2)
+l2 = gmsh.model.geo.addLine(p2, p3)
+l3 = gmsh.model.geo.addLine(p3, p4)
+l4 = gmsh.model.geo.addLine(p4, p1)
+l5 = gmsh.model.geo.addLine(p5, p6)
+l6 = gmsh.model.geo.addLine(p6, p7)
+l7 = gmsh.model.geo.addLine(p7, p8)
+l8 = gmsh.model.geo.addLine(p8, p5)
+l9 = gmsh.model.geo.addLine(p1, p5)
+l10 = gmsh.model.geo.addLine(p2, p6)
+l11 = gmsh.model.geo.addLine(p3, p7)
+l12 = gmsh.model.geo.addLine(p4, p8)
+
+
+c1 = gmsh.model.geo.addCurveLoop([l1, l2, l3, l4])
+p1 = gmsh.model.geo.addPlaneSurface([c1])
+
+c2 = gmsh.model.geo.addCurveLoop([l5, l6, l7, l8])
+p2 = gmsh.model.geo.addPlaneSurface([c2])
+
+c3 = gmsh.model.geo.addCurveLoop([l3, l12, -l7, -l11])
+p3 = gmsh.model.geo.addPlaneSurface([c3])
+
+c4 = gmsh.model.geo.addCurveLoop([l4, l9, -l8, -l12])
+p4 = gmsh.model.geo.addPlaneSurface([c4])
+
+c5 = gmsh.model.geo.addCurveLoop([l1, l10, -l5, -l9])
+p5 = gmsh.model.geo.addPlaneSurface([c5])
+
+c6 = gmsh.model.geo.addCurveLoop([l2, l11, -l6, -l10])
+p6 = gmsh.model.geo.addPlaneSurface([c6])
+
+l1 = gmsh.model.geo.addSurfaceLoop([i for i in [p1, p2 , p3, p4, p5, p6]])
+gmsh.model.geo.addVolume([l1])
+
+# # Generate mesh
 gmsh.model.geo.synchronize()
-gmsh.model.mesh.generate(2)
-
+gmsh.model.mesh.generate(3)
 
 # Run Gmsh GUI
 gmsh.fltk.run()
 
 # Finalize Gmsh
 gmsh.finalize()
+
