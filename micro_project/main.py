@@ -45,26 +45,50 @@ xi_now = np.zeros((n, n))   # высота волны ось 0z
 xi_next = np.zeros((n, n))
 h = np.zeros((n, n))
 
+
+h_e = np.zeros((n, n))
+h_w = np.zeros((n, n))
+h_n = np.zeros((n, n))
+h_s = np.zeros((n, n))
+uhwe = np.zeros((n, n)) 
+vhns = np.zeros((n, n))
+
 xi_list = list()              
 anim_interval = 20
 
 xi_now = -0.5*np.exp(-((X)**2/(2*(0.05E+6)**2) + (Y)**2/(2*(0.05E+6)**2)))
 
 for i in range(1, num_of_calc):
-    u_next[:-1, :] = u_now[:-1, :] - g*dt/dx*(xi_now[1:, :] - xi_now[:-1, :]) # нужно, чтобы на границе ноль было
+    u_next[:-1, :] = u_now[:-1, :] - g*dt/dx*(xi_now[1:, :] - xi_now[:-1, :])
     v_next[:, :-1] = v_now[:, :-1] - g*dt/dy*(xi_now[:, 1:] - xi_now[:, :-1])
+    
+    h_e[:-1, :] = np.where(u_next[:-1, :] > 0, xi_now[:-1, :] + h_0, xi_now[1:, :] + h_0)
+    h_e[-1, :] = xi_now[-1, :] + h_0
 
-    h = xi_now + h_0
+    h_w[0, :] = xi_now[0, :] + h_0
+    h_w[1:, :] = np.where(u_next[:-1, :] > 0, xi_now[:-1, :] + h_0, xi_now[1:, :] + h_0)
 
-    xi_next = xi_now - dt*((u_next*h)/dx + (v_next*h)/dy) 
+    h_n[:, :-1] = np.where(v_next[:, :-1] > 0, xi_now[:, :-1] + h_0, xi_now[:, 1:] + h_0)
+    h_n[:, -1] = xi_now[:, -1] + h_0
+
+    h_s[:, 0] = xi_now[:, 0] + h_0
+    h_s[:, 1:] = np.where(v_next[:, :-1] > 0, xi_now[:, :-1] + h_0, xi_now[:, 1:] + h_0)
+
+    uhwe[0, :] = u_next[0, :]*h_e[0, :]
+    uhwe[1:, :] = u_next[1:, :]*h_e[1:, :] - u_next[:-1, :]*h_w[1:, :]
+    
+    vhns[:, 0] = v_next[:, 0]*h_n[:, 0]
+    vhns[:, 1:] = v_next[:, 1:]*h_n[:, 1:] - v_next[:, :-1]*h_s[:, 1:]
+
+    xi_next[:, :] = xi_now[:, :] - dt*(uhwe[:, :]/dx + vhns[:, :]/dy)   
 
     u_now = np.copy(u_next)
     v_now = np.copy(v_next)
     xi_now = np.copy(xi_next)
 
     if (i % anim_interval == 0):
-        xi_list.append(xi_now)
         print("Сделано {} из {}".format(i, num_of_calc))
+        xi_list.append(xi_now)
 
 xi_viz = vizual(X, Y, xi_list, anim_interval*dt)
 
