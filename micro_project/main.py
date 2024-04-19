@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
-def vizual(X, Y, xi_list):
+def vizual(X, Y, xi_list, frame_interval):
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(1, 1, 1, projection='3d')
 
@@ -10,8 +10,14 @@ def vizual(X, Y, xi_list):
 
     def move(num):
         ax.clear()
-        surface = ax.plot_surface(X/1000, Y/1000, xi_list[num], cmap = plt.cm.RdBu_r)
-        ax.set_zlim(0, 4e+8)
+        surface = ax.plot_surface(X/1000, Y/1000, xi_list[num], cmap = plt.cm.Blues)
+        ax.set_title("Wave front $\\xi (x,y,t)$ for $t={}$ minutes".format(int(num*frame_interval/60)), fontsize = 15)
+        ax.set_xlabel("$x, \ km$", fontsize = 15)
+        ax.set_ylabel("$y, \ km$", fontsize = 15)
+        ax.set_zlabel("$\\xi, \ m$", fontsize = 15)
+        ax.set_xlim(X.min()/1000, X.max()/1000)
+        ax.set_ylim(Y.min()/1000, Y.max()/1000)
+        ax.set_zlim(-0.5, 0.5)
         plt.tight_layout()
         return surface
 
@@ -20,26 +26,46 @@ def vizual(X, Y, xi_list):
 
 
 a = 1e+6
-h = 100
+h_0 = 100
 g = 9.81
 n = 300
 dx = a/(n-1)
 dy = a/(n-1)
-dt = 0.1
-num_of_calc = 500
+dt = 0.1*min(dx, dy)/np.sqrt(g*h_0) 
+num_of_calc = 5000
 X, Y = np.meshgrid(np.linspace(-a/2, a/2, n), np.linspace(-a/2, a/2, n)) 
 
 
 
-xi = np.zeros((n, n))
+u_now = np.zeros((n, n))    # скорость по х
+u_next = np.zeros((n, n))
+v_now = np.zeros((n, n))    # скорость по у
+v_next = np.zeros((n, n))
+xi_now = np.zeros((n, n))   # высота волны ось 0z
+xi_next = np.zeros((n, n))
+h = np.zeros((n, n))
 
 xi_list = list()              
 anim_interval = 20
 
-for i in range(1, num_of_calc):
-    xi = (num_of_calc-i)*np.sqrt(X**2 + Y**2)
-    xi_list.append(xi)
+xi_now = -0.5*np.exp(-((X)**2/(2*(0.05E+6)**2) + (Y)**2/(2*(0.05E+6)**2)))
 
-xi_viz = vizual(X, Y, xi_list)
+for i in range(1, num_of_calc):
+    u_next[:-1, :] = u_now[:-1, :] - g*dt/dx*(xi_now[1:, :] - xi_now[:-1, :]) # нужно, чтобы на границе ноль было
+    v_next[:, :-1] = v_now[:, :-1] - g*dt/dy*(xi_now[:, 1:] - xi_now[:, :-1])
+
+    h = xi_now + h_0
+
+    xi_next = xi_now - dt*((u_next*h)/dx + (v_next*h)/dy) 
+
+    u_now = np.copy(u_next)
+    v_now = np.copy(v_next)
+    xi_now = np.copy(xi_next)
+
+    if (i % anim_interval == 0):
+        xi_list.append(xi_now)
+        print("Сделано {} из {}".format(i, num_of_calc))
+
+xi_viz = vizual(X, Y, xi_list, anim_interval*dt)
 
 plt.show()
