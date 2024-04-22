@@ -29,11 +29,11 @@ def vizual(X, Y, xi_list, frame_interval):
 a = 1e+6       # размер водоема по x и y
 h_0 = 100      # глубина водоема
 g = 9.81       # ускорение свободного падения
-n = 1500
+n = 600
 dx = a/(n-1)    # элементарный размер по х и у
 dy = a/(n-1)
 dt = 0.1*min(dx, dy)/np.sqrt(g*h_0)    # элементарный размер по времени по критерию КФЛ
-num_of_calc = 50000            # количество подсчетов
+num_of_calc = 60000            # количество подсчетов
 X, Y = np.meshgrid(np.linspace(-a/2, a/2, n), np.linspace(-a/2, a/2, n))   # сетка для моделирования
 
 
@@ -101,7 +101,6 @@ for i in range(1, num_of_calc):
 
 # дело сделано 
 print("Дело сделано за {:.2f} s".format(time.perf_counter() - t_0))
-
 xi_viz = vizual(X, Y, xi_list, anim_interval*dt)
 
 plt.show()
