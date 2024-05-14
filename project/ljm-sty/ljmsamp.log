@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.16)  14 MAY 2024 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.16)  15 MAY 2024 01:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,56 +888,53 @@ LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
 <./images//map.png, id=8, 833.1125pt x 453.695pt>
 File: ./images//map.png Graphic file (type png)
 <use ./images//map.png>
-Package pdftex.def Info: ./images//map.png  used on input line 78.
+Package pdftex.def Info: ./images//map.png  used on input line 79.
 (pdftex.def)             Requested size: 469.47046pt x 255.66664pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--80
-[]\T2A/tli/m/it/10.95 јминокислоты св€-зан-ны меж-ду со-бой пеп-тид-ны-ми св€-з
-€-ми C' и N ато-мов
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images//alpha.png>]
 [2 <./images//map.png>]
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 86.
+(Font)              using `T2A/tli/m/it' instead on input line 89.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 96.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 96.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 99.
 <./images//zone.png, id=34, 1119.18124pt x 432.61626pt>
 File: ./images//zone.png Graphic file (type png)
 <use ./images//zone.png>
-Package pdftex.def Info: ./images//zone.png  used on input line 121.
+Package pdftex.def Info: ./images//zone.png  used on input line 125.
 (pdftex.def)             Requested size: 469.47046pt x 181.47314pt.
 <./images//amin.png, id=35, 729.72626pt x 596.2275pt>
 File: ./images//amin.png Graphic file (type png)
 <use ./images//amin.png>
-Package pdftex.def Info: ./images//amin.png  used on input line 134.
+Package pdftex.def Info: ./images//amin.png  used on input line 138.
 (pdftex.def)             Requested size: 218.91957pt x 178.86963pt.
 
-Overfull \hbox (19.75029pt too wide) in paragraph at lines 134--135
+Overfull \hbox (19.75029pt too wide) in paragraph at lines 138--139
  [][] 
  []
 
 [3] [4 <./images//zone.png> <./images//amin.png>] [5]
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 159.
+(Font)              using `T2A/tli/m/it' instead on input line 163.
 
 <./images//ostatok.png, id=54, 1328.965pt x 224.84pt>
 File: ./images//ostatok.png Graphic file (type png)
 <use ./images//ostatok.png>
-Package pdftex.def Info: ./images//ostatok.png  used on input line 162.
+Package pdftex.def Info: ./images//ostatok.png  used on input line 166.
 (pdftex.def)             Requested size: 469.47046pt x 79.42593pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 162--163
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 166--167
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--205
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
  []
 
@@ -946,24 +943,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 203--205
 File: ./images//Rhombicdodecahedron.jpg Graphic file (type jpg)
 <use ./images//Rhombicdodecahedron.jpg>
 Package pdftex.def Info: ./images//Rhombicdodecahedron.jpg  used on input line 
-231.
+235.
 (pdftex.def)             Requested size: 170.43372pt x 151.36281pt.
 
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-242.
+246.
 
 <./images//potential.png, id=64, 361.35pt x 289.08pt>
 File: ./images//potential.png Graphic file (type png)
 <use ./images//potential.png>
-Package pdftex.def Info: ./images//potential.png  used on input line 244.
+Package pdftex.def Info: ./images//potential.png  used on input line 248.
 (pdftex.def)             Requested size: 216.81168pt x 173.44933pt.
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 24
-7.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 25
+1.
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 264--269
+Underfull \hbox (badness 1178) in paragraph at lines 268--273
 []\T2A/tli/m/it/10.95 ƒалее бы-ло про-ве-де-но урав-но-ве-ши-ва-ние с
  []
 
@@ -971,14 +968,31 @@ Underfull \hbox (badness 1178) in paragraph at lines 264--269
 <./images//temperature.png, id=69, 462.528pt x 346.896pt>
 File: ./images//temperature.png Graphic file (type png)
 <use ./images//temperature.png>
-Package pdftex.def Info: ./images//temperature.png  used on input line 279.
+Package pdftex.def Info: ./images//temperature.png  used on input line 283.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 <./images//density.png, id=70, 462.528pt x 346.896pt>
 File: ./images//density.png Graphic file (type png)
 <use ./images//density.png>
-Package pdftex.def Info: ./images//density.png  used on input line 284.
+Package pdftex.def Info: ./images//density.png  used on input line 288.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
- [9 <./images//temperature.png> <./images//density.png>] [10] (./ljmsamp.aux
+ [9 <./images//temperature.png> <./images//density.png>]
+<./images//prolin_em.png, id=76, 5158.27126pt x 2832.5825pt>
+File: ./images//prolin_em.png Graphic file (type png)
+<use ./images//prolin_em.png>
+Package pdftex.def Info: ./images//prolin_em.png  used on input line 303.
+(pdftex.def)             Requested size: 328.62788pt x 180.45049pt.
+<./images//prolin_end.png, id=77, 5158.27126pt x 2832.5825pt>
+File: ./images//prolin_end.png Graphic file (type png)
+<use ./images//prolin_end.png>
+Package pdftex.def Info: ./images//prolin_end.png  used on input line 309.
+(pdftex.def)             Requested size: 328.62788pt x 180.45049pt.
+<./images//gly_end.png, id=78, 5158.27126pt x 2832.5825pt>
+File: ./images//gly_end.png Graphic file (type png)
+<use ./images//gly_end.png>
+Package pdftex.def Info: ./images//gly_end.png  used on input line 328.
+(pdftex.def)             Requested size: 328.62788pt x 180.45049pt.
+ [10 <./images//prolin_em.png> <./images//prolin_end.png>] [11 <./images//gly_e
+nd.png>] (./ljmsamp.aux
 LaTeX Font Info:    Trying to load font information for OT1+tli on input line 5
 .
 LaTeX Font Info:    No file OT1tli.fd. on input line 5.
@@ -993,10 +1007,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 13130 strings out of 479607
- 187788 string characters out of 5885100
- 563604 words of memory out of 5000000
- 30729 multiletter control sequences out of 15000+600000
+ 13163 strings out of 479607
+ 188575 string characters out of 5885100
+ 563577 words of memory out of 5000000
+ 30762 multiletter control sequences out of 15000+600000
  499377 words of font info for 134 fonts, out of 8000000 for 9000
  497 hyphenation exceptions out of 8191
  75i,15n,79p,5722b,681s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1021,10 +1035,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ljmsamp.pdf (10 pages, 2424951 bytes).
+Output written on ljmsamp.pdf (11 pages, 3655859 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 474 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
