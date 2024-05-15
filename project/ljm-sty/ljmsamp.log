@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.16)  15 MAY 2024 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.16)  15 MAY 2024 20:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -867,7 +867,7 @@ LaTeX Font Warning: Font shape `T2A/tli/m/it' undefined
 
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 57.
+(Font)              using `T2A/tli/m/it' instead on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
@@ -875,7 +875,7 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 <./images//alpha.png, id=6, 231.86626pt x 498.86375pt>
 File: ./images//alpha.png Graphic file (type png)
 <use ./images//alpha.png>
-Package pdftex.def Info: ./images//alpha.png  used on input line 62.
+Package pdftex.def Info: ./images//alpha.png  used on input line 69.
 (pdftex.def)             Requested size: 69.56041pt x 149.66028pt.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
@@ -883,12 +883,12 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 75.
+(Font)              using `T2A/tli/m/it' instead on input line 82.
 
 <./images//map.png, id=8, 833.1125pt x 453.695pt>
 File: ./images//map.png Graphic file (type png)
 <use ./images//map.png>
-Package pdftex.def Info: ./images//map.png  used on input line 79.
+Package pdftex.def Info: ./images//map.png  used on input line 86.
 (pdftex.def)             Requested size: 469.47046pt x 255.66664pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -897,44 +897,39 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [2 <./images//map.png>]
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 89.
+(Font)              using `T2A/tli/m/it' instead on input line 96.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 99.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 106.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 99.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 106.
 <./images//zone.png, id=34, 1119.18124pt x 432.61626pt>
 File: ./images//zone.png Graphic file (type png)
 <use ./images//zone.png>
-Package pdftex.def Info: ./images//zone.png  used on input line 125.
+Package pdftex.def Info: ./images//zone.png  used on input line 133.
 (pdftex.def)             Requested size: 469.47046pt x 181.47314pt.
 <./images//amin.png, id=35, 729.72626pt x 596.2275pt>
 File: ./images//amin.png Graphic file (type png)
 <use ./images//amin.png>
-Package pdftex.def Info: ./images//amin.png  used on input line 138.
+Package pdftex.def Info: ./images//amin.png  used on input line 146.
 (pdftex.def)             Requested size: 218.91957pt x 178.86963pt.
 
-Overfull \hbox (19.75029pt too wide) in paragraph at lines 138--139
+Overfull \hbox (19.75029pt too wide) in paragraph at lines 146--147
  [][] 
  []
 
 [3] [4 <./images//zone.png> <./images//amin.png>] [5]
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 163.
+(Font)              using `T2A/tli/m/it' instead on input line 171.
 
 <./images//ostatok.png, id=54, 1328.965pt x 224.84pt>
 File: ./images//ostatok.png Graphic file (type png)
 <use ./images//ostatok.png>
-Package pdftex.def Info: ./images//ostatok.png  used on input line 166.
+Package pdftex.def Info: ./images//ostatok.png  used on input line 175.
 (pdftex.def)             Requested size: 469.47046pt x 79.42593pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 166--167
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 
  []
 
@@ -943,24 +938,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--209
 File: ./images//Rhombicdodecahedron.jpg Graphic file (type jpg)
 <use ./images//Rhombicdodecahedron.jpg>
 Package pdftex.def Info: ./images//Rhombicdodecahedron.jpg  used on input line 
-235.
+246.
 (pdftex.def)             Requested size: 170.43372pt x 151.36281pt.
 
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-246.
+257.
 
 <./images//potential.png, id=64, 361.35pt x 289.08pt>
 File: ./images//potential.png Graphic file (type png)
 <use ./images//potential.png>
-Package pdftex.def Info: ./images//potential.png  used on input line 248.
+Package pdftex.def Info: ./images//potential.png  used on input line 259.
 (pdftex.def)             Requested size: 216.81168pt x 173.44933pt.
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 25
-1.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 26
+2.
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 268--273
+Underfull \hbox (badness 1178) in paragraph at lines 279--284
 []\T2A/tli/m/it/10.95 ƒалее бы-ло про-ве-де-но урав-но-ве-ши-ва-ние с
  []
 
@@ -968,67 +963,76 @@ Underfull \hbox (badness 1178) in paragraph at lines 268--273
 <./images//temperature.png, id=69, 462.528pt x 346.896pt>
 File: ./images//temperature.png Graphic file (type png)
 <use ./images//temperature.png>
-Package pdftex.def Info: ./images//temperature.png  used on input line 283.
+Package pdftex.def Info: ./images//temperature.png  used on input line 294.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 <./images//density.png, id=70, 462.528pt x 346.896pt>
 File: ./images//density.png Graphic file (type png)
 <use ./images//density.png>
-Package pdftex.def Info: ./images//density.png  used on input line 288.
+Package pdftex.def Info: ./images//density.png  used on input line 299.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
  [9 <./images//temperature.png> <./images//density.png>]
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 295.
+(Font)              using `T2A/tli/m/it' instead on input line 306.
 
 <./images//prolin_em.png, id=76, 5158.27126pt x 2832.5825pt>
 File: ./images//prolin_em.png Graphic file (type png)
 <use ./images//prolin_em.png>
-Package pdftex.def Info: ./images//prolin_em.png  used on input line 304.
+Package pdftex.def Info: ./images//prolin_em.png  used on input line 315.
 (pdftex.def)             Requested size: 328.62788pt x 180.45049pt.
 <./images//prolin_end.png, id=77, 5158.27126pt x 2832.5825pt>
 File: ./images//prolin_end.png Graphic file (type png)
 <use ./images//prolin_end.png>
-Package pdftex.def Info: ./images//prolin_end.png  used on input line 310.
+Package pdftex.def Info: ./images//prolin_end.png  used on input line 321.
 (pdftex.def)             Requested size: 328.62788pt x 180.45049pt.
 <./images//gly_end.png, id=78, 5158.27126pt x 2832.5825pt>
 File: ./images//gly_end.png Graphic file (type png)
 <use ./images//gly_end.png>
-Package pdftex.def Info: ./images//gly_end.png  used on input line 329.
+Package pdftex.def Info: ./images//gly_end.png  used on input line 340.
 (pdftex.def)             Requested size: 328.62788pt x 180.45049pt.
 [10 <./images//prolin_em.png> <./images//prolin_end.png>]
-
-LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 340.
-
 <./images//gly.png, id=84, 867.24pt x 361.35pt>
 File: ./images//gly.png Graphic file (type png)
 <use ./images//gly.png>
-Package pdftex.def Info: ./images//gly.png  used on input line 347.
+Package pdftex.def Info: ./images//gly.png  used on input line 359.
 (pdftex.def)             Requested size: 469.47046pt x 195.61682pt.
-[11 <./images//gly_end.png> <./images//gly.png>]
-<./images//gly4.png, id=90, 5158.27126pt x 2832.5825pt>
+<./images//gly4.png, id=85, 5158.27126pt x 2832.5825pt>
 File: ./images//gly4.png Graphic file (type png)
 <use ./images//gly4.png>
-Package pdftex.def Info: ./images//gly4.png  used on input line 362.
+Package pdftex.def Info: ./images//gly4.png  used on input line 370.
 (pdftex.def)             Requested size: 328.62788pt x 180.45049pt.
-
+ [11 <./images//gly_end.png> <./images//gly.png>]
 
 LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
-(Font)              using `T2A/tli/m/it' instead on input line 366.
+(Font)              using `T2A/tli/m/it' instead on input line 375.
 
 <./images//pro.png, id=91, 867.24pt x 361.35pt>
 File: ./images//pro.png Graphic file (type png)
 <use ./images//pro.png>
-Package pdftex.def Info: ./images//pro.png  used on input line 374.
+Package pdftex.def Info: ./images//pro.png  used on input line 394.
+(pdftex.def)             Requested size: 422.52054pt x 176.05403pt.
+
+LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
+(Font)              using `T2A/tli/m/it' instead on input line 398.
+
+[12 <./images//gly4.png> <./images//pro.png>]
+
+LaTeX Font Warning: Font shape `T2A/tli/m/sl' undefined
+(Font)              using `T2A/tli/m/it' instead on input line 406.
+
+<./images//stability.png, id=97, 867.24pt x 361.35pt>
+File: ./images//stability.png Graphic file (type png)
+<use ./images//stability.png>
+Package pdftex.def Info: ./images//stability.png  used on input line 419.
 (pdftex.def)             Requested size: 469.47046pt x 195.61682pt.
-[12 <./images//gly4.png> <./images//pro.png>] [13] (./ljmsamp.aux
-LaTeX Font Info:    Trying to load font information for OT1+tli on input line 5
+[13 <./images//stability.png>] [14] [15] (./ljmsamp.aux
+LaTeX Font Info:    Trying to load font information for OT1+tli on input line 6
 .
-LaTeX Font Info:    No file OT1tli.fd. on input line 5.
+LaTeX Font Info:    No file OT1tli.fd. on input line 6.
 
 
 LaTeX Font Warning: Font shape `OT1/tli/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 5.
+(Font)              using `OT1/cmr/m/n' instead on input line 6.
 
 )
 
@@ -1036,10 +1040,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 13197 strings out of 479607
- 189194 string characters out of 5885100
- 563577 words of memory out of 5000000
- 30796 multiletter control sequences out of 15000+600000
+ 13214 strings out of 479607
+ 189532 string characters out of 5885100
+ 564255 words of memory out of 5000000
+ 30813 multiletter control sequences out of 15000+600000
  499377 words of font info for 134 fonts, out of 8000000 for 9000
  497 hyphenation exceptions out of 8191
  75i,15n,79p,5722b,681s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1064,10 +1068,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ljmsamp.pdf (13 pages, 4412111 bytes).
+Output written on ljmsamp.pdf (15 pages, 4542410 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+ 511 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
